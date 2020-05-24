@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-const url = 'https://covid19.mathdro.id/api';
+
+const url = 'https://corona.lmao.ninja/v2/all';
+
 
 export const fetchData = async () => {
     try {
-        const {data: {confirmed, recovered, deaths, lastUpdate}} = await axios.get(url);
+        const {data: {cases, recovered, deaths, updated}} = await axios.get(url);
 
-        return {confirmed, recovered, deaths, lastUpdate};
+        return {cases, recovered, deaths, updated};
     } catch (error) {
         
     }
